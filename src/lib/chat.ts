@@ -9,7 +9,10 @@ export interface AskAiResponse {
   answer: string;
 }
 
-const WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL as string | undefined;
+const DEFAULT_WEBHOOK_URL =
+  "https://krishnabagul.app.n8n.cloud/webhook-test/cf5e673f-ee4c-4897-abdb-a870f20de770";
+const WEBHOOK_URL =
+  (import.meta.env.VITE_N8N_WEBHOOK_URL as string | undefined) ?? DEFAULT_WEBHOOK_URL;
 
 /**
  * Extract a text answer from an unknown webhook response payload.
